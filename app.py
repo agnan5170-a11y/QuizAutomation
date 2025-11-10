@@ -62,7 +62,7 @@ with app.app_context():
     init_db()
 
 
-# ---------- Routes 1  ----------
+# ---------- Routes 2  ----------
 
 @app.route("/")
 def index():
