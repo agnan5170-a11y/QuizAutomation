@@ -1,0 +1,28 @@
+<!-- Template: index.html -->
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h3 class="card-title mb-3">Start Quiz</h3>
+        <form method="post" action="{{ url_for('start_quiz') }}">
+          <div class="mb-3">
+            <label class="form-label">Your name</label>
+            <input type="text" name="username" class="form-control" placeholder="Optional">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Number of questions</label>
+            <select name="num_questions" class="form-select">
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+            </select>
+          </div>
+          <button class="btn btn-primary w-100">Start</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

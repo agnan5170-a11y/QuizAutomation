@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Result for {{ username }}</h3>
+<p class="lead">
+  Score: <strong>{{ score }}/{{ total }}</strong>
+  ({{ (score / total * 100) | round(1) }}%)
+</p>
+
+<a class="btn btn-outline-primary mb-3"
+   href="{{ url_for('certificate', attempt_id=attempt_id) }}">
+  Download Certificate (PDF)
+</a>
+
+<h4>Review</h4>
+<table class="table table-sm table-bordered">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Question</th>
+    <th>Your Answer</th>
+    <th>Correct</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for a in answers %}
+    <tr class="{% if a.is_correct %}table-success{% else %}table-danger{% endif %}">
+      <td>{{ loop.index }}</td>
+      <td>{{ a.text }}</td>
+      <td>{{ a.user_answer or "-" }}</td>
+      <td>{{ a.correct_option }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+<a class="btn btn-secondary" href="{{ url_for('index') }}">Back to Home</a>
+{% endblock %}
+<!-- Template: result.html -->

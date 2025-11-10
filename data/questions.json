@@ -1,0 +1,20 @@
+[
+  {
+    "text": "2 + 2 = ?",
+    "option_a": "3",
+    "option_b": "4",
+    "option_c": "5",
+    "option_d": "22",
+    "correct_option": "B",
+    "qtype": "MCQ"
+  },
+  {
+    "text": "The capital of France is ____.",
+    "option_a": "Berlin",
+    "option_b": "Madrid",
+    "option_c": "Paris",
+    "option_d": "Rome",
+    "correct_option": "C",
+    "qtype": "MCQ"
+  }
+]
